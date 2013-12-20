@@ -2,7 +2,6 @@
 	// main include
 	require('main_include.php');
 
-
 ?>
 <html>
 	<head>
@@ -12,6 +11,7 @@
 		<link href="./lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"></link>
 	</head>
 	<body>
-		<!-- login form here -->
+		<h1>User: <?php echo($_SESSION['user_id'])?></h1>
+		<a href="./logout.php">Logout</a>
 	</body>
 </html>
