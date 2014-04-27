@@ -4,7 +4,7 @@
 
 	// login on post
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		// pull credentials from forn
+		// pull credentials from form
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 

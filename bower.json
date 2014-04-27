@@ -1,5 +1,5 @@
 {
-	"name" : "school-db",
+	"name" : "student-db",
 	"version" : "0.0.1",
 	"dependencies" : {
 		"jquery" : null,
