@@ -3,8 +3,8 @@
 	require('main_include.php');
 
 	//store the value of the "is_admin" field from the "user" table for the user in a variable
-	$stmt = $db->prepare('SELECT is_admin FROM user WHERE email = ?');
-	$stmt->bind_param('s', $email);
+	$stmt = $db->prepare('SELECT is_admin FROM user WHERE id = ?');
+	$stmt->bind_param('i', $_SESSION["user_id"]);
 	$stmt->execute();
 	$stmt->bind_result($is_admin);
 	$stmt->fetch();
