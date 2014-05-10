@@ -31,7 +31,7 @@
 								</div>
 								<div class="panel-body">
 									<h3>Create a New User</h3>
-									<form name="createuser" method="post">
+									<form name="createuser" action="create-form-info.php" method="post">
 										<table>
 											<tr>
 												<th>
@@ -73,7 +73,7 @@
 										</table>
 									</form>
 									<h3>Update an Existing User</h3>
-									<form name="updateuser" method="post">
+									<form name="updateuser" action="update-form-info.php" method="post">
 										<table>
 											<tr>
 												<th>
