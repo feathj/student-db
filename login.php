@@ -27,6 +27,8 @@
 			$_SESSION["email"] = $email;
 			header('Location: ./index.php');
 		} 
+	} else {
+		$failed = false;
 	}
 ?>
 <html>
