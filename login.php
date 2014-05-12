@@ -4,7 +4,7 @@
 
 	// login on post
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		// pull credentials from forn
+		// pull credentials from form
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 
@@ -20,15 +20,14 @@
 		$hashed = sha1($salt . $password);
 
 		// do the hashes match? add user id to session and redirect.
-		if($hashed === $encrypted_password){
-			session_start();
-			$_SESSION["user_id"] = $id;
-			header('Location: ./index.php');
-		} else {
-			$failed = true;
-		}
-	}
+		$failed = true;
 
+		if($hashed === $encrypted_password){
+			$_SESSION["user_id"] = $id;
+			$_SESSION["email"] = $email;
+			header('Location: ./index.php');
+		} 
+	}
 ?>
 <html>
 	<header>
