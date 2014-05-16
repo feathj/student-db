@@ -67,7 +67,7 @@
 											</tr>
 											<tr>
 												<th>
-													<label for="cpassword">Admin Access?</label>
+													<label for="cradio">Admin Access?</label>
 												</th>
 												<td>
 													<input type="radio" name="cradio" id="cradio" value="1">Yes<br>
