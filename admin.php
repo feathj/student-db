@@ -66,6 +66,15 @@
 												</td>
 											</tr>
 											<tr>
+												<th>
+													<label for="cradio">Admin Access?</label>
+												</th>
+												<td>
+													<input type="radio" name="cradio" id="cradio" value="1">Yes<br>
+													<input type="radio" name="cradio" id="cradio" value="0">No
+												</td>
+											</tr>
+											<tr>
 												<td>
 													<input type="submit" value="Submit">
 												</td>
@@ -133,6 +142,7 @@
 											</tr>
 										</table>
 									</form>
+									<a href="./logout.php">Logout</a>
 								</div>
 							</div>
 						</div>

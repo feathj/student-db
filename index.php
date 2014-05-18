@@ -1,7 +1,6 @@
 <?php
 	// main include
 	require('main_include.php');
-
 ?>
 <html>
 	<head>
