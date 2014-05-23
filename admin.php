@@ -19,6 +19,9 @@
 					document.getElementById('radio2').checked=false;
 					if (array[3] == 1) {
 						document.getElementById('radio1').checked=true;
+					} else if (array[3] == "") {
+						document.getElementById('radio1').checked=false;
+						document.getElementById('radio2').checked=false;
 					} else {
 						document.getElementById('radio2').checked=true;
 					}
@@ -118,8 +121,8 @@
 													<label for="radio">Admin Access?</label>
 												</th>
 												<td>
-													<input type="radio" name="radio1" id="radio1" value="1">Yes<br>
-													<input type="radio" name="radio2" id="radio2" value="0">No
+													<input type="radio" name="radio" id="radio1" value="1">Yes<br>
+													<input type="radio" name="radio" id="radio2" value="0">No
 												</td>
 											</tr>
 											<tr>
