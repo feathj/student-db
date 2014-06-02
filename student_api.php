@@ -7,7 +7,7 @@ $json = array();
 
 if (mysqli_num_rows($result)) {
 	while ($row = mysqli_fetch_row($result)) {
-		$json['student'][] = $row;
+		$json['students'][] = $row;
 	}
 }
 
