@@ -11,7 +11,7 @@
 			$.each(data.students, function(x) {
 				tableHTML += "<tr>";
 				$.each(data.students[x], function(y) {
-					tableHTML += "<td>" + data.students[x][y] + "</td>";
+					tableHTML += "<td><a href='student.php?id="+data.students[x][0]+"'>" + data.students[x][y] + "</a></td>";
 				});
 				tableHTML += "</tr>";
 			});
