@@ -24,6 +24,7 @@
 
 	<html>
 		<body>
+			<h1>Students</h1>
 			<div id="student_info"></div>
 		</body>
 	</html>

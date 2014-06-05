@@ -24,6 +24,7 @@
 
 	<html>
 		<body>
+			<h1>Teachers</h1>
 			<div id="teacher_info"></div>
 		</body>
 	</html>
