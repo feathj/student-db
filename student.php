@@ -67,7 +67,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	</table>
 </form>
 <a href="students.php">Back to All Students</a>
-<?php
 
-?>
 

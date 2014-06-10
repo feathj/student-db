@@ -18,3 +18,4 @@ if ($tenure) {
 echo "<html><ul><li>Name: ".$first_name." ".$last_name."</li>";
 echo "<li>Tenure: ".$tenure."</li></ul></html>";
 ?>
+<a href="teachers.php">Back to All Teachers</a>

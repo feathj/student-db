@@ -6,7 +6,6 @@
 
 	$(document).ready(function() {
 		$.getJSON("student_api.php", function(data) {
-			console.log(data);
 			var tableHTML = "<table>";
 			$.each(data.students, function(x) {
 				tableHTML += "<tr>";
@@ -35,7 +34,7 @@
 								<label for="firstname">First Name:</label>
 							</th>
 							<td>
-								<input type="text" name="firstname" id="firstname">
+								<input type="text" name="firstname" id="firstname" required>
 							</td>
 						</tr>
 						<tr>
@@ -43,7 +42,7 @@
 								<label for="lastname">Last Name:</label>
 							</th>
 							<td>
-								<input type="text" name="lastname" id="lastname">
+								<input type="text" name="lastname" id="lastname" required>
 							</td>
 						</tr>
 						<tr>
@@ -51,7 +50,7 @@
 								<label for="year">Year:</label>
 							</th>
 							<td>
-								<input type="number" name="year" id="year" value="2014">
+								<input type="number" name="year" id="year" value="2014" required>
 							</td>
 						</tr>
 						<tr>
@@ -64,5 +63,3 @@
 			</div>
 		</body>
 	</html>
-
-<?php ?>
