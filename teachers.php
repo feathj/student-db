@@ -6,7 +6,6 @@
 
 	$(document).ready(function() {
 		$.getJSON("teacher_api.php", function(data) {
-			console.log(data);
 			var tableHTML = "<table>";
 			$.each(data.teachers, function(x) {
 				tableHTML += "<tr>";
@@ -28,5 +27,3 @@
 			<div id="teacher_info"></div>
 		</body>
 	</html>
-
-<?php ?>
