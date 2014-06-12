@@ -12,6 +12,7 @@
 	<body>
 		<h1>User: <?php echo($_SESSION['user_id'])?></h1>
 		<a href="./admin.php">Admin</a>
+		<a href="./classes.php">Classes</a>
 		<a href="./students.php">Students</a>
 		<a href="./teachers.php">Teachers</a>
 		<a href="./logout.php">Logout</a>
