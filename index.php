@@ -1,20 +1,16 @@
 <?php
 	// main include
 	require('main_include.php');
+	require('main-nav.php');
 ?>
 <html>
-	<head>
+	<!--<head>
 		<script src="./lib/jquery/jquery.min.js"></script>
 		<script src="./lib/underscore/underscore-min.js"></script>
 		<script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
 		<link href="./lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"></link>
-	</head>
+	</head>-->
 	<body>
 		<h1>User: <?php echo($_SESSION['user_id'])?></h1>
-		<a href="./admin.php">Admin</a>
-		<a href="./classes.php">Classes</a>
-		<a href="./students.php">Students</a>
-		<a href="./teachers.php">Teachers</a>
-		<a href="./logout.php">Logout</a>
 	</body>
 </html>

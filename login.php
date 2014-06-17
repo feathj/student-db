@@ -31,8 +31,8 @@
 ?>
 <html>
 	<header>
-		<link href="./lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-		<script type="text/javascript" src="./lib/jquery/jquery.js"></script>
+		<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 		<script type="text/javascript">
 		</script>
 	</header>

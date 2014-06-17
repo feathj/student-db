@@ -1,6 +1,7 @@
 <?php
 	// main include
 	require('main_include.php');
+	require('main-nav.php');
 	?>
 
 	<script type="text/javascript">
@@ -132,7 +133,6 @@
 											</tr>
 										</table>
 									</form>
-									<a href="./logout.php">Logout</a>
 								</div>
 							</div>
 						</div>

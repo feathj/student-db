@@ -1,5 +1,6 @@
 <?php
 require('main_include.php');
+require('main-nav.php');
 
 $q = intval($_GET['id']);
 
