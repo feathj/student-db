@@ -33,40 +33,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	echo "<li>Credit Hours: ".$credit_hours."</li></ul></html>";
 }
 ?>
-<h3>Edit this student's information</h3>
-<form name="updateStudent" action="" method="post">
-	<table>
-		<tr>
-			<th>
-				<label for="firstname">First Name:</label>
-			</th>
-			<td>
-				<input type="text" name="firstname" id="firstname" required>
-			</td>
-		</tr>
-		<tr>
-			<th>
-				<label for="lastname">Last Name:</label>
-			</th>
-			<td>
-				<input type="text" name="lastname" id="lastname" required>
-			</td>
-		</tr>
-		<tr>
-			<th>
-				<label for="year">Year:</label>
-			</th>
-			<td>
-				<input type="number" name="year" id="year" value="2014" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<input type="submit" value="Submit">
-			</td>
-		</tr>
-	</table>
-</form>
 <a href="students.php">Back to All Students</a>
 
-
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">Edit this Student's Information</h2>
+				</div>
+				<div class="panel-body">
+					<form name="updateStudent" action="" method="post">
+						<table class="table">
+							<tr>
+								<th>
+									<label for="firstname">First Name:</label>
+								</th>
+								<td>
+									<input type="text" name="firstname" id="firstname" required>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="lastname">Last Name:</label>
+								</th>
+								<td>
+									<input type="text" name="lastname" id="lastname" required>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="year">Year:</label>
+								</th>
+								<td>
+									<input type="number" name="year" id="year" value="2014" required>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="submit" value="Submit">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

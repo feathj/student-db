@@ -7,7 +7,7 @@ require('main-nav.php');
 
 	$(document).ready(function() {
 		$.getJSON("teacher_api.php", function(data) {
-			var tableHTML = "<table>";
+			var tableHTML = "<table class='table'>";
 			$.each(data.teachers, function(x) {
 				tableHTML += "<tr>";
 				$.each(data.teachers[x], function(y) {
