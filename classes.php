@@ -25,8 +25,12 @@ require('main-nav.php');
 	<html>
 		<body>
 			<div class="container">
-				<h1>Classes</h1>
-				<div id="course_info"></div>
+				<div class="row">
+					<div class="col-lg-4 col-lg-offset-0">
+						<h1>Classes</h1>
+						<div id="course_info"></div>
+					</div>
+				</div>
 			</div>
 		</body>
 	</html>

@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				</div>
 				<div class="panel-body">
 					<form name="updateStudent" action="" method="post">
-						<table class="table">
+						<table>
 							<tr>
 								<th>
 									<label for="firstname">First Name:</label>
