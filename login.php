@@ -20,7 +20,6 @@
 		$hashed = sha1($salt . $password);
 
 		// do the hashes match? add user id to session and redirect.
-		$failed = true;
 
 		if($hashed === $encrypted_password){
 			$_SESSION["user_id"] = $id;
@@ -45,7 +44,8 @@
 						<div class="panel-heading">
 							<h3 class="panel-title">Please sign in</h3>
 							<!-- show failed notification if signin failed -->
-							<?php if($failed){ ?>
+							<?php $failed = true;
+							if($failed){ ?>
 							<span>X Invalid email or password</span>
 							<?php } ?>
 						</div>

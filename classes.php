@@ -24,7 +24,9 @@ require('main-nav.php');
 
 	<html>
 		<body>
-			<h1>Classes</h1>
-			<div id="course_info"></div>
+			<div class="container">
+				<h1>Classes</h1>
+				<div id="course_info"></div>
+			</div>
 		</body>
 	</html>

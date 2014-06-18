@@ -24,9 +24,9 @@ require('main-nav.php');
 
 <html>
 	<body>
+		<div class="container">
 		<h1>Students</h1>
 		<div id="student_info"></div>
-		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					<div class="panel panel-default">
