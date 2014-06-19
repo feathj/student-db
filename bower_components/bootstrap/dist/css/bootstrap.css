@@ -1406,6 +1406,7 @@ table {
 }
 th {
   text-align: left;
+  vertical-align: top;
 }
 .table {
   width: 100%;
@@ -1648,7 +1649,7 @@ legend {
 }
 label {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
   margin-right: 8px;
   font-weight: bold;
 }
@@ -3162,6 +3163,7 @@ input[type="button"].btn-block {
 }
 .btn-toolbar {
   margin-left: -5px;
+  margin: 10px;
 }
 .btn-toolbar .btn-group,
 .btn-toolbar .input-group {
@@ -4956,7 +4958,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading {
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #5ECADF;
   border-color: #ddd;
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {

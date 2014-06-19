@@ -25,7 +25,7 @@ echo "<li>Credit Hours: ".$credit_hours."</li></ul></html>";
 				</div>
 				<div class="panel-body">
 					<form name="assign_teacher_student" action="assignTandS.php?class_id=<?php echo $class_id; ?>" method="post">
-						<table class="table">
+						<table>
 							<tr>
 								<th>
 									<label for="teachers">Select a teacher:</label>
