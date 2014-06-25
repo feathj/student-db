@@ -22,11 +22,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
 	echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 } else {
-	$stmt = $db->prepare("SELECT first_name, last_name, year, credit_hours FROM student WHERE id = '".$q."'");
+	$stmt = $db->prepare("SELECT first_name, last_name, year FROM student WHERE id = '".$q."'");
 	$stmt->execute();
-	$stmt->bind_result($first_name, $last_name, $year, $credit_hours);
+	$stmt->bind_result($first_name, $last_name, $year);
 	$stmt->fetch();
 	$stmt->close();
+
+	$stmtI = $db->prepare("SELECT SUM(class.credit_hours)
+							FROM class
+							INNER JOIN student_class
+							ON class.id=student_class.class_id
+							WHERE student_class.student_id='".$q."'");
+	$stmtI->execute();
+	$stmtI->bind_result($credit_hours);
+	$stmtI->fetch();
+	$stmtI->close();
 
 	echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
 	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
