@@ -578,6 +578,10 @@ ul ol,
 ol ol {
   margin-bottom: 0;
 }
+.details {
+  font-size: 25px;
+  color: rgb(70, 122, 123);
+}
 .list-unstyled {
   padding-left: 0;
   list-style: none;

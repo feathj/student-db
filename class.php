@@ -12,13 +12,12 @@ $stmt->bind_result($title, $credit_hours);
 $stmt->fetch();
 $stmt->close();
 
-echo "<html><ul><li>Title: ".$title."</li>";
-echo "<li>Credit Hours: ".$credit_hours."</li></ul></html>";
+echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$title."</li>";
+echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 ?>
-<a href="classes.php">Back to All Classes</a>
-<div class="container">
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
+<a href="classes.php"><div class="glyphicon glyphicon-arrow-left"></div>&nbsp;Back to All Classes</a>
+		</div>
+		<div class="col-md-4 col-md-offset-0">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">Give this Class a Teacher and Students</h2>
@@ -72,4 +71,4 @@ echo "<li>Credit Hours: ".$credit_hours."</li></ul></html>";
 			</div>
 		</div>
 	</div>
-</div>
+</html>

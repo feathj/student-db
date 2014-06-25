@@ -16,7 +16,10 @@ if ($tenure) {
 	$tenure = "No";
 }
 
-echo "<html><ul><li>Name: ".$first_name." ".$last_name."</li>";
-echo "<li>Tenure: ".$tenure."</li></ul></html>";
+echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
+echo "<li class='list-group-item'>Tenure: ".$tenure."</li></ul>";
 ?>
-<a href="teachers.php">Back to All Teachers</a>
+<a href="teachers.php"><div class="glyphicon glyphicon-arrow-left"></div>&nbsp;Back to All Teachers</a>
+		</div>
+	</div>
+</html>

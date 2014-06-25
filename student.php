@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$stmt->fetch();
 	$stmt->close();
 
-	echo "<html><ul><li>Name: ".$first_name." ".$last_name."</li>";
-	echo "<li>Graduation Year: ".$year."</li>";
-	echo "<li>Credit Hours: ".$credit_hours."</li></ul></html>";
+	echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
+	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
+	echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 } else {
 	$stmt = $db->prepare("SELECT first_name, last_name, year, credit_hours FROM student WHERE id = '".$q."'");
 	$stmt->execute();
@@ -28,16 +28,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$stmt->fetch();
 	$stmt->close();
 
-	echo "<html><ul><li>Name: ".$first_name." ".$last_name."</li>";
-	echo "<li>Graduation Year: ".$year."</li>";
-	echo "<li>Credit Hours: ".$credit_hours."</li></ul></html>";
+	echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
+	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
+	echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 }
 ?>
-<a href="students.php">Back to All Students</a>
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
+<a href="students.php"><div class="glyphicon glyphicon-arrow-left"></div>&nbsp;Back to All Students</a>
+		</div>
+		<div class="col-md-4 col-md-offset-0">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">Edit this Student's Information</h2>
@@ -80,4 +78,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			</div>
 		</div>
 	</div>
-</div>
+</html>
