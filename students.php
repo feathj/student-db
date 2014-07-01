@@ -1,7 +1,7 @@
 <?php 
 require('main-nav.php');
 ?>
-<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="lib/jquery/dist/jquery.js"></script>
 
 <script>
 

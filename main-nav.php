@@ -1,7 +1,7 @@
 <?php
 ?>
 <head>
-	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"></link>
+	<link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"></link>
 </head>
 <div class="btn-toolbar" role="toolbar">
   <div class="btn-group btn-group-lg">
