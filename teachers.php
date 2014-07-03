@@ -1,12 +1,13 @@
 <?php 
+require('main-nav.php');
 ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="lib/jquery/dist/jquery.js"></script>
 
 <script>
 
 	$(document).ready(function() {
 		$.getJSON("teacher_api.php", function(data) {
-			var tableHTML = "<table>";
+			var tableHTML = "<table class='table'>";
 			$.each(data.teachers, function(x) {
 				tableHTML += "<tr>";
 				$.each(data.teachers[x], function(y) {
@@ -23,7 +24,13 @@
 
 	<html>
 		<body>
-			<h1>Teachers</h1>
-			<div id="teacher_info"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-lg-offset-0">
+						<h1>Teachers</h1>
+						<div id="teacher_info"></div>
+					</div>
+				</div>
+			</div>
 		</body>
 	</html>
