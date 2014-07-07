@@ -4,7 +4,8 @@ require('main-nav.php');
 
 $q = intval($_GET['id']);
 
-$stmt = $db->prepare("SELECT first_name, last_name, tenure FROM teacher WHERE id = '".$q."'");
+$stmt = $db->prepare("SELECT first_name, last_name, tenure FROM teacher WHERE id = ?");
+$stmt->bind_param('i', $q);
 $stmt->execute();
 $stmt->bind_result($first_name, $last_name, $tenure);
 $stmt->fetch();

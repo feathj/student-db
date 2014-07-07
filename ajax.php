@@ -3,7 +3,8 @@ require('main_include.php');
 
 $q = intval($_GET['q']);
 
-$stmt = $db->prepare("SELECT first_name, last_name, email, is_admin FROM user WHERE id = '".$q."'");
+$stmt = $db->prepare("SELECT first_name, last_name, email, is_admin FROM user WHERE id = ?");
+$stmt->bind_param('i', $q);
 $stmt->execute();
 $stmt->bind_result($first_name, $last_name, $email, $is_admin);
 $stmt->fetch();
