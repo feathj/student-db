@@ -20,6 +20,8 @@ while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 	$data[] = $row["student_id"];
 }
 
+$student_count = count($data);
+
 echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$title."</li>";
 echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>";
 ?>
@@ -31,7 +33,7 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 					<h2 class="panel-title">Give this Class a Teacher and Students</h2>
 				</div>
 				<div class="panel-body">
-					<form name="assign_teacher_student" action="assignTandS.php?class_id=<?php echo $class_id; ?>" method="post">
+					<form name="assign_teacher_student" action="assignTandS.php?class_id=<?php echo $class_id; ?>&amp;student_count=<?php echo $student_count; ?>" method="post">
 						<table>
 							<tr>
 								<th>
