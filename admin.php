@@ -17,12 +17,12 @@
 					document.getElementById('lastname').value=array[1];
 					document.getElementById('email').value=array[2];
 					document.getElementById('radio1').checked=false;
-					document.getElementById('radio2').checked=false;
+					document.getElementById('radio2').checked=true;
 					if (array[3] == 1) {
 						document.getElementById('radio1').checked=true;
 					} else if (array[3] == "") {
 						document.getElementById('radio1').checked=false;
-						document.getElementById('radio2').checked=false;
+						document.getElementById('radio2').checked=true;
 					} else {
 						document.getElementById('radio2').checked=true;
 					}
@@ -89,7 +89,7 @@
 													<label for="firstname">First Name:</label>
 												</th>
 												<td>
-													<input type="text" name="firstname" id="firstname">
+													<input type="text" name="firstname" id="firstname" required>
 												</td>
 											</tr>
 											<tr>
@@ -97,7 +97,7 @@
 													<label for="lastname">Last Name:</label>
 												</th>
 												<td>
-													<input type="text" name="lastname" id="lastname">
+													<input type="text" name="lastname" id="lastname" required>
 												</td>
 											</tr>
 											<tr>
@@ -105,7 +105,7 @@
 													<label for="email">E-mail:</label>
 												</th>
 												<td>
-													<input type="email" name="email" id="email">
+													<input type="email" name="email" id="email" required>
 												</td>
 											</tr>
 											<tr>
@@ -113,7 +113,7 @@
 													<label for="password">Password:</label>
 												</th>
 												<td>
-													<input type="password" name="password" id="password">
+													<input type="password" name="password" id="password" required>
 												</td>
 											</tr>
 											<tr>
@@ -122,7 +122,7 @@
 												</th>
 												<td>
 													<input type="radio" name="radio" id="radio1" value="1">Yes<br>
-													<input type="radio" name="radio" id="radio2" value="0">No
+													<input type="radio" name="radio" id="radio2" value="0" checked>No
 												</td>
 											</tr>
 											<tr>
