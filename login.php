@@ -1,6 +1,7 @@
 <?php
 	// main include
 	require('main_include.php');
+	$failed = false;
 
 	// login on post
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,9 +26,9 @@
 			$_SESSION["user_id"] = $id;
 			$_SESSION["email"] = $email;
 			header('Location: ./index.php');
-		} 
-	} else {
-		$failed = false;
+		} else {
+			$failed = true;
+		}
 	}
 ?>
 <html>
@@ -44,8 +45,7 @@
 						<div class="panel-heading">
 							<h3 class="panel-title">Please sign in</h3>
 							<!-- show failed notification if signin failed -->
-							<?php $failed = true;
-							if($failed){ ?>
+							<?php if($failed){ ?>
 							<span>X Invalid email or password</span>
 							<?php } ?>
 						</div>

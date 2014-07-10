@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	mysqli_query($db,"UPDATE student SET first_name='$first_name', last_name='$last_name', year='$year' WHERE id=$q");
 
 	echo '<h3>Student Updated!</h3>';
-	$stmt = $db->prepare("SELECT first_name, last_name, year FROM student WHERE id = '".$q."'");
+	$stmt = $db->prepare("SELECT first_name, last_name, year FROM student WHERE id = ?");
+	$stmt->bind_param('i', $q);
 	$stmt->execute();
 	$stmt->bind_result($first_name, $last_name, $year);
 	$stmt->fetch();
@@ -22,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							FROM class
 							INNER JOIN student_class
 							ON class.id=student_class.class_id
-							WHERE student_class.student_id='".$q."'");
+							WHERE student_class.student_id=?");
+	$stmtI->bind_param('i', $q);
 	$stmtI->execute();
 	$stmtI->bind_result($credit_hours);
 	$stmtI->fetch();
@@ -32,7 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
 	echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 } else {
-	$stmt = $db->prepare("SELECT first_name, last_name, year FROM student WHERE id = '".$q."'");
+	$stmt = $db->prepare("SELECT first_name, last_name, year FROM student WHERE id = ?");
+	$stmt->bind_param('i', $q);
 	$stmt->execute();
 	$stmt->bind_result($first_name, $last_name, $year);
 	$stmt->fetch();
@@ -42,7 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							FROM class
 							INNER JOIN student_class
 							ON class.id=student_class.class_id
-							WHERE student_class.student_id='".$q."'");
+							WHERE student_class.student_id=?");
+	$stmtI->bind_param('i', $q);
 	$stmtI->execute();
 	$stmtI->bind_result($credit_hours);
 	$stmtI->fetch();
