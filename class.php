@@ -60,18 +60,18 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 							</tr>
 							<tr>
 								<th>
-									<label for="students">Select some students:</label>
+									<label>Select some students:</label>
 								</th>
-								<td>
+								<td class="checkbox" style="padding-left:0">
 									<?php
 										$stmtII = $db->prepare('SELECT id, first_name, last_name FROM student');
 										$stmtII->execute();
 										$stmtII->bind_result($sid, $sfirst_name, $slast_name);
 										while ($stmtII->fetch()) {
 											if (in_array($sid, $data)) {
-												echo '<input type="checkbox" checked="true" name="students[]" value="'.$sid.'">'.$sfirst_name.' '.$slast_name.'<br>';
+												echo '<input type="checkbox" checked="true" name="students[]" id="'.$sid.'" value="'.$sid.'"><label for="'.$sid.'">'.$sfirst_name.' '.$slast_name.'</label><br>';
 											} else {
-												echo '<input type="checkbox" name="students[]" value="'.$sid.'">'.$sfirst_name.' '.$slast_name.'<br>';												
+												echo '<input type="checkbox" name="students[]" id="'.$sid.'" value="'.$sid.'"><label for="'.$sid.'">'.$sfirst_name.' '.$slast_name.'</label><br>';												
 											}
 										}
 										$stmtII->close();
@@ -79,8 +79,8 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 								</td>
 							</tr>
 							<tr>
-								<td>
-									<input type="submit" value="Submit">
+								<td colspan="2">
+									<input class="btn btn-lg btn-success btn-block" style="margin-top:10px" type="submit" value="Submit">
 								</td>
 							</tr>
 						</table>

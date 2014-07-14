@@ -12,5 +12,7 @@
 	</head>-->
 	<body>
 		<h1>User: <?php echo($_SESSION['user_id'])?></h1>
+		<p>Welcome! This is a sandbox site meant for teaching Tyler how to develop.</p>
+		<p>Jon F. is the Web Sensei.</p>
 	</body>
 </html>
