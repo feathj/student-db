@@ -92,8 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								</td>
 							</tr>
 							<tr>
-								<td>
-									<input type="submit" value="Submit">
+								<td colspan="2">
+									<input class="btn btn-lg btn-success btn-block" style="margin-top:10px" type="submit" value="Submit">
 								</td>
 							</tr>
 						</table>

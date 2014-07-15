@@ -69,19 +69,19 @@
 													<label for="select">Select a user:</label>
 												</th>
 												<td>
-													<select name="users" id="users" onchange="getUserID()">
-														<option value="new_user">New User</option>
-														<?php
-															//fetch possible list of users from db and display in dropdown menu
-															$stmt = $db->prepare('SELECT id, first_name, last_name FROM user');
-															$stmt->execute();
-															$stmt->bind_result($id, $first_name, $last_name);
-															while ($stmt->fetch()) {
-																echo '<option value="' . $id . '">' . $first_name . ' ' . $last_name . '</option>';
-															}
-															$stmt->close();
-														?>
-													</select>
+														<select name="users" id="users" onchange="getUserID()">
+															<option value="new_user">New User</option>
+															<?php
+																//fetch possible list of users from db and display in dropdown menu
+																$stmt = $db->prepare('SELECT id, first_name, last_name FROM user');
+																$stmt->execute();
+																$stmt->bind_result($id, $first_name, $last_name);
+																while ($stmt->fetch()) {
+																	echo '<option value="' . $id . '">' . $first_name . ' ' . $last_name . '</option>';
+																}
+																$stmt->close();
+															?>
+														</select>
 												</td>
 											</tr>
 											<tr>
@@ -118,16 +118,16 @@
 											</tr>
 											<tr>
 												<th>
-													<label for="radio">Admin Access?</label>
+													<label>Admin Access?</label>
 												</th>
-												<td>
-													<input type="radio" name="radio" id="radio1" value="1">Yes<br>
-													<input type="radio" name="radio" id="radio2" value="0" checked>No
+												<td class="radio">
+													<input type="radio" name="radio" id="radio1" value="1"><label for="radio1">Yes</label><br>
+													<input type="radio" name="radio" id="radio2" value="0" checked><label for="radio2">No</label>
 												</td>
 											</tr>
 											<tr>
-												<td>
-													<input type="submit" value="Submit">
+												<td colspan="2">
+													<input class="btn btn-lg btn-success btn-block" style="margin-top:10px" type="submit" value="Submit">
 												</td>
 											</tr>
 										</table>
