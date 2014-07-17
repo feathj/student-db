@@ -63,8 +63,6 @@ echo "<html><div class='container'><h1>Assignment <span class='small'>for $class
 												</td>
 											</tr>
 										";
-									} else {
-										echo '';												
 									}
 								}
 								$stmtII->close();
@@ -81,6 +79,3 @@ echo "<html><div class='container'><h1>Assignment <span class='small'>for $class
 		</div>
 	</div>
 </html>
-<?php
-//send all the data to the student_assignment table
-?>
