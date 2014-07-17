@@ -63,7 +63,7 @@
 								</div>
 								<div class="panel-body">
 									<form name="cu_user" action="form-info.php" method="post">
-										<table>
+										<table class="table">
 											<tr>
 												<th>
 													<label for="select">Select a user:</label>

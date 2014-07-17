@@ -34,7 +34,7 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 					</div>
 					<div class="panel-body">
 						<form name="assign_teacher_student" action="assignTandS.php?class_id=<?php echo $class_id; ?>&amp;student_count=<?php echo $student_count; ?>" method="post">
-							<table>
+							<table class="table">
 								<tr>
 									<th>
 										<label for="teachers">Select a teacher:</label>
@@ -88,14 +88,14 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-md-offset-0">
+			<div class="col-md-4 col-md-offset-0">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h2 class="panel-title">Create an Assignment</h2>
 					</div>
 					<div class="panel-body">
 						<form name="create_assignment" action="make_assignment.php?class_id=<?php echo $class_id; ?>" method="post">
-							<table>
+							<table class="table">
 								<tr>
 									<th>
 										<label for="title">Name:</label>
@@ -125,7 +125,7 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 						$stmtIII->execute();
 						$stmtIII->bind_result($assignment_id, $assignments);
 						while ($stmtIII->fetch()) {
-							echo "<a href='assignments.php?assignment_id=".$assignment_id."'><li class='list-group-item'>$assignments</li></a>";
+							echo "<a href='assignments.php?assignment_id=".$assignment_id."&amp;id=".$class_id."'><li class='list-group-item'>$assignments</li></a>";
 						}
 						$stmtIII->close();
 					?>
