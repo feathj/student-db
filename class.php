@@ -26,6 +26,19 @@ echo "<html><div class='container'><h1>Class</h1><div class='row'><div class='co
 echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>";
 ?>
 <a href="classes.php"><div class="glyphicon glyphicon-arrow-left"></div>&nbsp;Back to All Classes</a>
+				<h3>Grade Assignments</h3>
+				<ul class="list-group">
+					<?php
+						$stmtIII = $db->prepare('SELECT id, name FROM assignment WHERE class_id = ?');
+						$stmtIII->bind_param('i', $class_id);
+						$stmtIII->execute();
+						$stmtIII->bind_result($assignment_id, $assignments);
+						while ($stmtIII->fetch()) {
+							echo "<a href='assignments.php?assignment_id=".$assignment_id."&amp;id=".$class_id."'><li class='list-group-item'>$assignments</li></a>";
+						}
+						$stmtIII->close();
+					?>
+				</ul>
 			</div>
 			<div class="col-md-4 col-md-offset-0">
 				<div class="panel panel-default">
@@ -113,23 +126,6 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 						</form>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 col-md-offset-0">
-				<h3>Grade Assignments</h3>
-				<ul class="list-group">
-					<?php
-						$stmtIII = $db->prepare('SELECT id, name FROM assignment WHERE class_id = ?');
-						$stmtIII->bind_param('i', $class_id);
-						$stmtIII->execute();
-						$stmtIII->bind_result($assignment_id, $assignments);
-						while ($stmtIII->fetch()) {
-							echo "<a href='assignments.php?assignment_id=".$assignment_id."&amp;id=".$class_id."'><li class='list-group-item'>$assignments</li></a>";
-						}
-						$stmtIII->close();
-					?>
-				</ul>
 			</div>
 		</div>
 	</div>
