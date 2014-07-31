@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$stmtI->fetch();
 	$stmtI->close();
 
-	echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
+	echo "<html><div class='container'><h1>Student</h1><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
 	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
 	echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 }
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				</div>
 				<div class="panel-body">
 					<form name="updateStudent" action="" method="post">
-						<table>
+						<table class="table">
 							<tr>
 								<th>
 									<label for="firstname">First Name:</label>

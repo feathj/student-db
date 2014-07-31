@@ -36,7 +36,7 @@ require('main-nav.php');
 					</div>
 					<div class="panel-body">
 						<form name="createStudent" action="createStudent.php" method="post">
-							<table>
+							<table class="table">
 								<tr>
 									<th>
 										<label for="firstname">First Name:</label>

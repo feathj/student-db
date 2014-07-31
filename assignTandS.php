@@ -20,7 +20,7 @@ if (isset($_POST['students'])) {
 		break;
 		} else {
 			mysqli_query($db, "UPDATE student_class SET student_id = $student_id WHERE class_id = $class_id");
-			mysqli_query($db,"INSERT INTO student_class (student_id, class_id) VALUES ($student_id, $class_id)");
+			mysqli_query($db,"INSERT INTO student_class (student_id, class_id) VALUES ('$student_id', '$class_id')");
 		}
 	}
 }
