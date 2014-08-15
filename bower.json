@@ -1,9 +1,10 @@
 {
-	"name" : "school-db",
-	"version" : "0.0.1",
-	"dependencies" : {
-		"jquery" : null,
-		"underscore" : null,
-		"bootstrap" : null
-	}
+  "name": "student-db",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": null,
+    "underscore": null,
+    "bootstrap": null,
+    "highcharts": "~4.0.3"
+  }
 }

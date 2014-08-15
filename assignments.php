@@ -4,6 +4,64 @@ require('main-nav.php');
 
 $q = intval($_GET['assignment_id']);
 $r = intval($_GET['id']);
+$grades = mysqli_query($db, "SELECT letter_grade, COUNT(letter_grade) AS 'count' FROM student_assignment WHERE assignment_id = $q GROUP BY letter_grade;");
+$data = [];
+while ($row = mysqli_fetch_array($grades, MYSQL_ASSOC)) {
+	$data[$row['letter_grade']] = $row['count'];
+}
+
+$possibleGrades = ['A', 'B', 'C', 'D', 'F'];
+foreach ($possibleGrades as $possibleGrade) {
+	if (!isset($data[$possibleGrade])) {
+		$data[$possibleGrade] = 0;
+	}
+}
+
+?>
+
+<script src="lib/jquery/dist/jquery.js"></script>
+<script src="lib/highcharts/highcharts.js"></script>
+
+<script type="text/javascript">
+	$(function () { 
+	    $('#chart').highcharts({
+	        chart: {
+	            type: 'bar',
+	            color: '#333',
+	            borderRadius: 4,
+	            borderWidth: 1,
+	            borderColor: '#ddd',
+	            style: {
+	            	fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif;'
+	            }
+	        },
+	        credits: {
+	        	enabled: false
+	        },
+	        title: {
+	            text: 'Grade Distribution'
+	        },
+	        xAxis: {
+	            categories: ['A', 'B', 'C', 'D', 'F']
+	        },
+	        yAxis: {
+	            title: {
+	                text: '# of Grades Earned'
+	            },
+	            labels: {
+	                step: 4
+	            }
+	        },
+	        series: [{
+	            name: 'Students',
+	            color: 'rgb(70, 122, 123)',
+	            data: [<?php echo $data['A']; ?>, <?php echo $data['B']; ?>, <?php echo $data['C']; ?>, <?php echo $data['D']; ?>, <?php echo $data['F']; ?>]
+	        }]
+	    });
+	});
+</script>
+
+<?php
 
 $stmt = $db->prepare("SELECT name FROM assignment WHERE id = ?");
 $stmt->bind_param('i', $q);
@@ -30,6 +88,7 @@ echo "<html><div class='container'><h1>Assignment <span class='small'>for $class
 
 ?>
 <a href="class.php?id=<?php echo $r; ?>"><div class="glyphicon glyphicon-arrow-left"></div>&nbsp;Back to Class Assignments</a>
+			<div id="chart" style="width:100%; height:300px; margin-top:20px;"></div>
 		</div>
 		<div class="col-md-4 col-md-offset-0">
 			<div class="panel panel-default">
