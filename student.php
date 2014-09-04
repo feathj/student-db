@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	mysqli_query($db,"UPDATE student SET first_name='$first_name', last_name='$last_name', year='$year' WHERE id=$q");
 
-	echo '<h3>Student Updated!</h3>';
 	$stmt = $db->prepare("SELECT first_name, last_name, year FROM student WHERE id = ?");
 	$stmt->bind_param('i', $q);
 	$stmt->execute();
@@ -30,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$stmtI->fetch();
 	$stmtI->close();
 
-	echo "<html><div class='container'><h1>Student</h1><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
+	echo "<html><div class='container'><h1>Student Updated!</h1><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
 	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
 	echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 } else {

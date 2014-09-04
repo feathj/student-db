@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	mysqli_query($db,"UPDATE teacher SET first_name='$first_name', last_name='$last_name', tenure='$tenure' WHERE id=$q");
 
-	echo "<h3>Teacher Updated!</h3>";
 	$stmt = $db->prepare("SELECT first_name, last_name, tenure FROM teacher WHERE id = ?");
 	$stmt->bind_param('i', $q);
 	$stmt->execute();
@@ -25,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$tenure = "No";
 	}
 
-	echo "<html><div class='container'><h1>Teacher</h1><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
+	echo "<html><div class='container'><h1>Teacher Updated!</h1><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
 	echo "<li class='list-group-item'>Tenure: ".$tenure."</li></ul>";
 } else {
 	$stmt = $db->prepare("SELECT first_name, last_name, tenure FROM teacher WHERE id = ?");
