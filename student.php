@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	mysqli_query($db,"UPDATE student SET first_name='$first_name', last_name='$last_name', year='$year' WHERE id=$q");
 
-	echo '<h3>Student Updated!</h3>';
 	$stmt = $db->prepare("SELECT first_name, last_name, year FROM student WHERE id = ?");
 	$stmt->bind_param('i', $q);
 	$stmt->execute();
@@ -30,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$stmtI->fetch();
 	$stmtI->close();
 
-	echo "<html><div class='container'><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
+	echo "<html><div class='container'><h1>Student Updated!</h1><div class='col-md-4 col-md-offset-0'><ul class='list-group details'><li class='list-group-item'>".$first_name." ".$last_name."</li>";
 	echo "<li class='list-group-item'>Graduation Year: ".$year."</li>";
 	echo "<li class='list-group-item'>Credit Hours: ".$credit_hours."</li></ul>";
 } else {
@@ -62,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="col-md-4 col-md-offset-0">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h2 class="panel-title">Edit this Student's Information</h2>
+					<h2 class="panel-title"><button id="edit" class="btn btn-default btn-sm" type="button"><span class="h4">Edit</span></button> this Student's Information</h2>
 				</div>
 				<div class="panel-body">
 					<form name="updateStudent" action="" method="post">
@@ -72,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 									<label for="firstname">First Name:</label>
 								</th>
 								<td>
-									<input type="text" name="firstname" id="firstname" required>
+									<input type="text" name="firstname" id="firstname" value="<?php echo $first_name ?>" disabled>
 								</td>
 							</tr>
 							<tr>
@@ -80,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 									<label for="lastname">Last Name:</label>
 								</th>
 								<td>
-									<input type="text" name="lastname" id="lastname" required>
+									<input type="text" name="lastname" id="lastname" value="<?php echo $last_name ?>" disabled>
 								</td>
 							</tr>
 							<tr>
@@ -88,12 +87,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 									<label for="year">Year:</label>
 								</th>
 								<td>
-									<input type="number" name="year" id="year" value="2014" required>
+									<input type="number" name="year" id="year" value="<? echo $year ?>" disabled>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">
-									<input class="btn btn-lg btn-success btn-block" style="margin-top:10px" type="submit" value="Submit">
+									<input class="btn btn-lg btn-success btn-block" style="margin-top:10px" type="submit" value="Submit" disabled>
 								</td>
 							</tr>
 						</table>
@@ -102,4 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			</div>
 		</div>
 	</div>
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script>
+		$('#edit').click(function () {
+			$('input').removeAttr('disabled').attr('required', true);
+		});
+	</script>
 </html>

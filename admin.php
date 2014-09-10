@@ -48,9 +48,6 @@
 		<html>
 			<header>
 				<link href="./lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-				<script type="text/javascript" src="./lib/jquery/jquery.js"></script>
-				<script type="text/javascript">
-				</script>
 			</header>
 			<body>
 
@@ -69,19 +66,19 @@
 													<label for="select">Select a user:</label>
 												</th>
 												<td>
-														<select name="users" id="users" onchange="getUserID()">
-															<option value="new_user">New User</option>
-															<?php
-																//fetch possible list of users from db and display in dropdown menu
-																$stmt = $db->prepare('SELECT id, first_name, last_name FROM user');
-																$stmt->execute();
-																$stmt->bind_result($id, $first_name, $last_name);
-																while ($stmt->fetch()) {
-																	echo '<option value="' . $id . '">' . $first_name . ' ' . $last_name . '</option>';
-																}
-																$stmt->close();
-															?>
-														</select>
+													<select name="users" id="users" onchange="getUserID()">
+														<option value="new_user">New User</option>
+														<?php
+															//fetch possible list of users from db and display in dropdown menu
+															$stmt = $db->prepare('SELECT id, first_name, last_name FROM user');
+															$stmt->execute();
+															$stmt->bind_result($id, $first_name, $last_name);
+															while ($stmt->fetch()) {
+																echo '<option value="' . $id . '">' . $first_name . ' ' . $last_name . '</option>';
+															}
+															$stmt->close();
+														?>
+													</select>
 												</td>
 											</tr>
 											<tr>
