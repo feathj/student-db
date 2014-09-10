@@ -72,11 +72,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							</tr>
 							<tr>
 								<th>
-									<label for="tenure">Tenure:</label>
+									<label>Tenure:</label>
 								</th>
 								<td>
-									<input type="radio" name="tenure" id="tenure" value="1" disabled <?php if ($tenure == "Yes") {?>checked<?php } ?>>Yes
-									<input type="radio" name="tenure" id="tenure" value="0" disabled <?php if ($tenure == "No") {?>checked<?php } ?>>No
+									<input type="radio" name="tenure" id="tenure1" value="1" disabled <?php if ($tenure == "Yes") {?>checked<?php } ?>><label for="tenure1" style="font-weight:normal">Yes</label>
+									<input type="radio" name="tenure" id="tenure0" value="0" disabled <?php if ($tenure == "No") {?>checked<?php } ?>><label for="tenure0" style="font-weight:normal">No</label>
 								</td>
 							</tr>
 							<tr>
