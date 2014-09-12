@@ -1,0 +1,90 @@
+/*CSS Overrides of bootstrap.css*/
+
+table {	 
+	margin: auto;
+}
+
+body {
+	background-color: #FDF8E4;
+}
+
+.details {
+	font-size: 25px;
+	color: rgb(70, 122, 123);
+}
+
+th {
+	vertical-align: top;
+}
+
+label {
+	margin-bottom: 12px;
+	margin-right: 8px;
+}
+
+input[type="checkbox"] {
+	margin: 4px 4px 0 0;
+}
+
+.btn-success {
+	background-color: #5567B3;
+	border-color: #604CAE;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+	color: #fff;
+	background-color: #4151A3;
+	border-color: #604CAE;
+}
+
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+	background-color: #ddd;
+	border-color: #ddd;
+}
+
+.btn-toolbar {
+	margin: 10px;
+}
+
+.panel-default > .panel-heading {
+	background-color: #5ECADF;
+}
+
+.close {
+	color: #fff;
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+
+.close:hover, .close:focus {
+	color: #fff;
+	filter: alpha(opacity=80);
+	opacity: .8;
+}
+
+.modal {
+	top: 48px;
+}
+
+.modal-content {
+	border-radius: 5px;
+}
+
+.modal-header {
+	background: #5ECADF;
+	border-radius: 4px 4px 0 0;
+}

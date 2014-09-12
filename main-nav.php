@@ -1,7 +1,8 @@
 <?php
 ?>
 <head>
-	<link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"></link>
+	<link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="css/tyler.css" rel="stylesheet">
 </head>
 <div class="btn-toolbar" role="toolbar">
   <div class="btn-group btn-group-lg">
