@@ -48,6 +48,7 @@
 		<html>
 			<header>
 				<link href="./lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+				<link href="css/tyler.css" rel="stylesheet">
 			</header>
 			<body>
 
