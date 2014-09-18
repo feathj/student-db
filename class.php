@@ -3,6 +3,9 @@ require('main_include.php');
 require('main-nav.php');
 ?>
 
+<script src="lib/jquery/dist/jquery.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+
 <?php
 $class_id = intval($_GET['id']);
 
@@ -39,6 +42,7 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 						$stmtIII->close();
 					?>
 				</ul>
+				<span class='btn btn-primary btn-md btn-success glyphicon glyphicon-plus' data-toggle='modal' data-target='#myModal' title='Create a New Assignment'></span>
 			</div>
 			<div class="col-md-4 col-md-offset-0">
 				<div class="panel panel-default">
@@ -101,29 +105,35 @@ echo "<li class='list-group-item'>Credit Hours: ".$credit_hours.'.0'."</li></ul>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-md-offset-0">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h2 class="panel-title">Create an Assignment</h2>
-					</div>
-					<div class="panel-body">
-						<form name="create_assignment" action="make_assignment.php?class_id=<?php echo $class_id; ?>" method="post">
-							<table class="table">
-								<tr>
-									<th>
-										<label for="title">Name:</label>
-									</th>
-									<td>
-										<input type="text" id="title" name="title">
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<input class="btn btn-lg btn-success btn-block" style="margin-top:10px" type="submit" value="Submit">
-									</td>
-								</tr>
-							</table>
-						</form>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title" id="myModalLabel">Create a New Assignment</h4>
+						</div>
+						<div class="modal-body">
+
+							<form name="create_assignment" action="make_assignment.php?class_id=<?php echo $class_id; ?>" method="post">
+								<table class="table">
+									<tr>
+										<th>
+											<label for="title">Name:</label>
+										</th>
+										<td>
+											<input type="text" id="title" name="title">
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<input class="btn btn-lg btn-success btn-block" style="margin-top:10px" type="submit" value="Submit">
+										</td>
+									</tr>
+								</table>
+							</form>
+
+						</div>
 					</div>
 				</div>
 			</div>
