@@ -8,6 +8,6 @@ $tenure = $_POST["tenure"];
 mysqli_query($db,"INSERT INTO teacher (first_name, last_name, tenure) VALUES ('$firstname', '$lastname', '$tenure')");
 mysqli_close($db);
 
-header("Location: thankyou.php");
+header("Location: teachers.php");
 
 ?>

@@ -8,6 +8,6 @@ mysqli_query($db,"INSERT INTO assignment (name, class_id) VALUES ('$assignment',
 
 mysqli_close($db);
 
-header("Location: thankyou.php");
+header("Location: class.php?id=$class_id");
 
 ?>

@@ -96,16 +96,38 @@ echo "<html><div class='container'><h1>Assignment <span class='small'>for $class
 					<h2 class="panel-title">Give Students their Grades</h2>
 				</div>
 				<div class="panel-body">
-					<form name="give_grades" action="give_grades.php?assignment_id=<?php echo $q; ?>" method="post">
+					<form name="give_grades" action="give_grades.php?assignment_id=<?php echo $q; ?>&amp;id=<?php echo $r; ?>" method="post">
 						<table class="table">
 							<?php
 								$a = 0;
-								$stmtII = $db->prepare('SELECT id, first_name, last_name FROM student');
+								$stmtII = $db->prepare('SELECT student.id, student.first_name, student.last_name, student_assignment.letter_grade, student_class.class_id
+														FROM student
+														JOIN student_class
+														ON student.id = student_class.student_id
+														AND student_class.class_id = ?
+														LEFT JOIN student_assignment
+														ON student.id = student_assignment.student_id
+														AND student_assignment.assignment_id = ?;');
+								$stmtII->bind_param('ii', $r, $q);
 								$stmtII->execute();
-								$stmtII->bind_result($sid, $sfirst_name, $slast_name);
+								$stmtII->bind_result($sid, $sfirst_name, $slast_name, $letter_grade, $sclass_id);
 								while ($stmtII->fetch()) {
 									if (in_array($sid, $data)) {
 										$select_name_id = "grade_".$a++;
+										if (isset($letter_grade)) {
+											echo "
+												<tr>
+													<td>
+														<label for='$select_name_id' style='display:inline; font-weight:normal; cursor:pointer; margin-right:20px;'>$sfirst_name $slast_name</label>
+													</td>
+													<td>
+														<select name='$sid' id='$select_name_id'>
+															<option value='".$letter_grade."'>".$letter_grade."</option>
+														</select>
+													</td>
+												</tr>
+											";
+										} else {
 										echo "
 											<tr>
 												<td>
@@ -122,6 +144,7 @@ echo "<html><div class='container'><h1>Assignment <span class='small'>for $class
 												</td>
 											</tr>
 										";
+										}
 									}
 								}
 								$stmtII->close();
