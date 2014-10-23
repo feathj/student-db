@@ -8,6 +8,6 @@ $year = $_POST["year"];
 mysqli_query($db,"INSERT INTO student (first_name, last_name, year) VALUES ('$firstname', '$lastname', '$year')");
 mysqli_close($db);
 
-header("Location: thankyou.php");
+header("Location: students.php");
 
 ?>

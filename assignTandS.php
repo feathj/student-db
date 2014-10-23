@@ -27,6 +27,6 @@ if (isset($_POST['students'])) {
 
 mysqli_close($db);
 
-header("Location: thankyou.php");
+header("Location: class.php?id=$class_id");
 
 ?>
